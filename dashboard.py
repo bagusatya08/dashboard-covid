@@ -4,6 +4,7 @@ import plotly.express as px
 import pandas as pd
 import datetime
 
+# Stream lit
 st.set_page_config(layout="wide")
 data_ch = pd.read_csv("dataset/dataset_covid.csv")
 
