@@ -4,7 +4,7 @@ import pandas as pd
 import datetime
 
 st.set_page_config(layout="wide")
-data_ch = pd.read_csv("dataset/dataset_covid.csv")
+data_ch = pd.read_csv("dataset/dataset.csv")
 
 # Konversi kolom "Date" menjadi datetime
 data_ch['Date'] = pd.to_datetime(data_ch['Date'])
@@ -56,10 +56,13 @@ if province_option and isinstance(d, tuple) and len(d) == 2:
 else:
     st.write("Please select the correct datespan")
 
+with st.container():
+    st.markdown("#####")
+
 maincol1, maincol2 = st.columns([1,3])
 with maincol1:
     confirmed = filter_timeline.Confirmed.sum()
-    recovered = filter_timeline.Recovered.sum()
+    recovered = int(filter_timeline.Recovered.sum())
     deaths    = filter_timeline.Deaths.sum()
 
     total_confirmed = data_ch.Confirmed.sum()
@@ -70,8 +73,11 @@ with maincol1:
     percen_recovered = round(recovered/total_recovered*100,2)
     percen_deaths    = round(deaths/total_deaths*100,2)
     st.metric(label="Total Confirmed", value=f"{confirmed:,}", delta=percen_confirmed)
+    st.markdown("####")
     st.metric(label="Total Recovered", value=f"{recovered:,}", delta=percen_recovered)
+    st.markdown("####")
     st.metric(label="Total Deaths",    value=f"{deaths:,}",    delta=percen_deaths)
+    st.markdown("####")
 
 with maincol2:
     # visualisasi geomap
