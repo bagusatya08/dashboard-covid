@@ -1,0 +1,136 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Jersey"
+        },
+        "geometry": {
+          "type": "MultiPolygon",
+          "coordinates": [[[[-2.2, 49.18], [-2.2, 49.25], [-2.1, 49.25], [-2.1, 49.18], [-2.2, 49.18]]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Bermuda"
+        },
+        "geometry": {
+          "type": "MultiPolygon",
+          "coordinates": [[[[-64.87, 32.25], [-64.87, 32.38], [-64.63, 32.38], [-64.63, 32.25], [-64.87, 32.25]]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Anguilla"
+        },
+        "geometry": {
+          "type": "MultiPolygon",
+          "coordinates": [[[[-63.13, 18.16], [-63.13, 18.28], [-62.99, 18.28], [-62.99, 18.16], [-63.13, 18.16]]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "British Virgin Island"
+        },
+        "geometry": {
+          "type": "MultiPolygon",
+          "coordinates": [[[[-64.75, 18.35], [-64.75, 18.48], [-64.53, 18.48], [-64.53, 18.35], [-64.75, 18.35]]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Cayman Island"
+        },
+        "geometry": {
+          "type": "MultiPolygon",
+          "coordinates": [[[[-81.45, 19.25], [-81.45, 19.38], [-81.10, 19.38], [-81.10, 19.25], [-81.45, 19.25]]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Channel Island"
+        },
+        "geometry": {
+          "type": "MultiPolygon",
+          "coordinates": [[[[-2.7, 49.32], [-2.7, 49.42], [-2.03, 49.42], [-2.03, 49.32], [-2.7, 49.32]]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Falkland Island (Malvinas)"
+        },
+        "geometry": {
+          "type": "MultiPolygon",
+          "coordinates": [[[[-61.5, -52.0], [-61.5, -51.6], [-58.5, -51.6], [-58.5, -52.0], [-61.5, -52.0]]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Gibraltar"
+        },
+        "geometry": {
+          "type": "MultiPolygon",
+          "coordinates": [[[[-5.37, 36.11], [-5.37, 36.18], [-5.28, 36.18], [-5.28, 36.11], [-5.37, 36.11]]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Guernsey"
+        },
+        "geometry": {
+          "type": "MultiPolygon",
+          "coordinates": [[[[-2.7, 49.42], [-2.7, 49.52], [-2.50, 49.52], [-2.50, 49.42], [-2.7, 49.42]]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Isle of Man"
+        },
+        "geometry": {
+          "type": "MultiPolygon",
+          "coordinates": [[[[-4.8, 54.05], [-4.8, 54.42], [-4.28, 54.42], [-4.28, 54.05], [-4.8, 54.05]]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Montserrat"
+        },
+        "geometry": {
+          "type": "MultiPolygon",
+          "coordinates": [[[[-62.25, 16.70], [-62.25, 16.80], [-62.05, 16.80], [-62.05, 16.70], [-62.25, 16.70]]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Saint Helena, Ascension and Tristan da Cunha"
+        },
+        "geometry": {
+          "type": "MultiPolygon",
+          "coordinates": [[[[-14.0, -16.0], [-14.0, -15.8], [-13.8, -15.8], [-13.8, -16.0], [-14.0, -16.0]]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Turks and Caicos Islands"
+        },
+        "geometry": {
+          "type": "MultiPolygon",
+          "coordinates": [[[[-72.0, 21.60], [-72.0, 21.80], [-71.60, 21.80], [-71.60, 21.60], [-72.0, 21.60]]]]
+        }
+      }
+    ]
+  }
+  
