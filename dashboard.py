@@ -196,11 +196,11 @@ with st.container():
         percen_deaths    = round(deaths/total_deaths*100,2)
         st.markdown("####")
         st.markdown("######")
-        st.metric(label="Total Confirmed", value=f"{confirmed:,}% of Total Confirmed Case Globally", delta=percen_confirmed)
+        st.metric(label="Total Confirmed", value=f"{confirmed:,}", delta=f"{percen_confirmed}% of Case Globally")
         st.markdown("####")
-        st.metric(label="Total Recovered", value=f"{recovered:,}% of Total Recovered Case Globally", delta=percen_recovered)
+        st.metric(label="Total Recovered", value=f"{recovered:,}", delta=f"{percen_recovered}% of Case Globally")
         st.markdown("####")
-        st.metric(label="Total Deaths",    value=f"{deaths:,}% of Total Deaths Case Globally",    delta=percen_deaths)
+        st.metric(label="Total Deaths",    value=f"{deaths:,}",    delta=f"{percen_deaths}% of Case Globally")
         st.markdown("####")
 
     with oncol2:
