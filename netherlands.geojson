@@ -1,0 +1,102 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Netherlands"
+            },
+            "geometry": {
+                "type": "MultiPolygon",
+                "coordinates": [
+                    [
+                        [
+                            [3.3168, 50.8636],
+                            [3.4315, 50.9013],
+                            [3.495, 50.8255],
+                            [3.3034, 50.7991],
+                            [3.3168, 50.8636]
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Aruba"
+            },
+            "geometry": {
+                "type": "MultiPolygon",
+                "coordinates": [
+                    [
+                        [
+                            [-70.0657, 12.6188],
+                            [-69.9885, 12.6146],
+                            [-69.9385, 12.4888],
+                            [-70.0657, 12.6188]
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Bonaire, Sint Eustatius and Saba"
+            },
+            "geometry": {
+                "type": "MultiPolygon",
+                "coordinates": [
+                    [
+                        [
+                            [-63.0326, 17.6257],
+                            [-63.0866, 17.6763],
+                            [-62.9537, 17.7222],
+                            [-63.0326, 17.6257]
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Curacao"
+            },
+            "geometry": {
+                "type": "MultiPolygon",
+                "coordinates": [
+                    [
+                        [
+                            [-68.9743, 12.2408],
+                            [-68.9358, 12.2344],
+                            [-68.8858, 12.0794],
+                            [-68.9743, 12.2408]
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Sint Maarten"
+            },
+            "geometry": {
+                "type": "MultiPolygon",
+                "coordinates": [
+                    [
+                        [
+                            [-63.0886, 18.0663],
+                            [-63.011, 18.0497],
+                            [-63.0135, 18.0341],
+                            [-63.1053, 18.0423],
+                            [-63.0886, 18.0663]
+                        ]
+                    ]
+                ]
+            }
+        }
+    ]
+}
