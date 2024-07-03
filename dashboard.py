@@ -3,13 +3,13 @@ import plotly.express as px
 import pandas as pd
 import datetime
 import folium
-from streamlit_folium import folium_static
 import json
-from IPython.display import display
 import geopandas as gpd
+from streamlit_folium import folium_static
+from IPython.display import display
 
 st.set_page_config(layout="wide")
-data_ch = pd.read_csv("dataset_covid.csv")
+data_ch = pd.read_csv("dataset/updated_dataset_covid.csv")
 
 # Konversi kolom "Date" menjadi datetime
 data_ch['Date'] = pd.to_datetime(data_ch['Date'])
@@ -103,7 +103,6 @@ nz_op = {
      'Cook Islands': [-21.234, -159.792]
 }
 
-
 # Create a list of tuples with index and name
 index_name_list = [(index, name) for index, name in enumerate(uk_op.keys())]
 
@@ -187,7 +186,7 @@ with st.container():
         st.markdown("####")
 
         if (country_option == "Australia"):
-            geojson_data = json.load(open('dashboard/states.geojson'))
+            geojson_data = json.load(open('geojson/australia.geojson'))
             # Highlight selected country
             m = folium.Map(location=[-25.2744, 133.7751], zoom_start=4)  # Adjust the starting location and zoom level as needed
 
@@ -199,10 +198,10 @@ with st.container():
             ).add_to(m)
 
             folium.LayerControl().add_to(m)
-            folium_static(m, width=1070, height=500)
+            folium_static(m, width=950, height=500)
 
         elif(country_option == "United Kingdom"):
-            geojson_data = json.load(open('dashboard/uk_regions.geojson'))
+            geojson_data = json.load(open('geojson/united_kingdom.geojson'))
             m = folium.Map(location=uk_op[province_option], zoom_start=8)  # Adjust the starting location and zoom level as needed
 
             for feature in geojson_data['features']:
@@ -213,9 +212,9 @@ with st.container():
             for location, coord in uk_op.items():
                 add_marker(m, uk_op[province_option][0],  uk_op[province_option][1], uk_keys.query(f"name=='{province_option}'").name.to_string())
 
-            folium_static(m, width=1070, height=500)
+            folium_static(m, width=950, height=500)
         elif(country_option == "New Zealand"):
-            geojson_data = json.load(open('nz.geojson'))
+            geojson_data = json.load(open('geojson/nz.geojson'))
             m = folium.Map(location=nz_op[province_option], zoom_start=4)  # Adjust the starting location and zoom level as needed
 
             for feature in geojson_data['features']:
@@ -226,10 +225,10 @@ with st.container():
             for location, coord in nz_op.items():
                 add_marker(m, nz_op[province_option][0],  nz_op[province_option][1], "Cook Island")
 
-            folium_static(m, width=1070, height=500)
+            folium_static(m, width=950, height=500)
         elif(country_option == "France"):
             # Membaca file GeoJSON France
-            with open('dashboard/france.geojson', 'r') as f:
+            with open('geojson/france.geojson', 'r') as f:
                 geojson_data = json.load(f)
 
             # Membuat objek peta
@@ -252,35 +251,23 @@ with st.container():
             folium.LayerControl().add_to(m)
 
             # Menampilkan peta di notebook
-            folium_static(m, width=1070, height=500)
+            folium_static(m, width=950, height=500)
 
-        elif(country_option == "China"):
+        elif (country_option == "China"):
             # Load geospatial data for Chinese provinces
-            china_map = gpd.read_file('dashboard/chn_admbnda_adm1_ocha_2020.shp')
-
-            # Load COVID-19 data
-            covid_data = pd.read_csv('dashboard/dataset/updated_dataset_covid.csv')
-
-            # Function to determine fill color based on confirmed cases
-            def get_fill_color(confirmed_cases):
-                if confirmed_cases < 1000:
-                    return 'green'
-                elif confirmed_cases < 10000:
-                    return 'orange'
-                else:
-                    return 'red'
+            china_map = gpd.read_file('geojson/china geojson/chn_admbnda_adm1_ocha_2020.shp')
 
             # Function to create interactive map
             def create_map():
                 # Create the Folium map
                 m = folium.Map(location=[35, 105], zoom_start=4, tiles='cartodb positron')
 
-                # Add GeoJSON layer for China provinces with COVID-19 data
+                # Add GeoJSON layer for China provinces
                 folium.GeoJson(
                     china_map,
                     name='China Province COVID-19 Data',
                     style_function=lambda feature: {
-                        'fillColor': get_fill_color(covid_data[covid_data['province'] == feature['properties']['ADM1_EN']]['Confirmed'].sum()),
+                        'fillColor': 'yellow' if feature['properties']['ADM1_EN'] == province_option else '#3186cc',
                         'color': 'black',
                         'weight': 1,
                         'fillOpacity': 0.6
@@ -293,13 +280,15 @@ with st.container():
                         style=('background-color: white; color: #333333; font-family: sans-serif')
                     )
                 ).add_to(m)
-                
-                folium_static(m, width=1070, height=500)
+                folium.LayerControl().add_to(m)
+                folium_static(m, width=950, height=500)
+
+            # Call the function to create and display the map
             create_map()
 
         elif(country_option == "Denmark"):
             # Membaca file GeoJSON Denmark
-            with open('dashboard/denmark.geojson', 'r') as f:
+            with open('geojson/denmark.geojson', 'r') as f:
                 denmark_geojson = json.load(f)
 
             # Membuat objek peta
@@ -322,11 +311,11 @@ with st.container():
             folium.LayerControl().add_to(m)
 
             # Menampilkan peta di notebook
-            folium_static(m, width=1070, height=500)
+            folium_static(m, width=950, height=500)
 
         elif(country_option == "Netherlands"):
             # Membaca file GeoJSON Netherlands
-            with open('dashboard/netherlands.geojson', 'r') as f:
+            with open('geojson/netherlands.geojson', 'r') as f:
                 netherlands_geojson = json.load(f)
 
             # Membuat objek peta
@@ -349,7 +338,7 @@ with st.container():
             folium.LayerControl().add_to(m)
 
             # Menampilkan peta di notebook
-            folium_static(m, width=1070, height=500)
+            folium_static(m, width=950, height=500)
 
 with st.container():
     # visualisasi linechart
